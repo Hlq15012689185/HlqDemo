@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.overview.Dao.IllegelUserDao">
+    <!--查询所有违法用户-->
+    <select id="selectAllUser" resultType="com.example.overview.entity.IllegelUser">
+         SELECT USER_ID AS userId,USER_NAME AS userName,DEPT_CODE AS deptCode
+         FROM T_INFO_ILLEGEL_USER
+    </select>
+</mapper>
