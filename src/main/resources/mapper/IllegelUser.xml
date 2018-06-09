@@ -3,7 +3,10 @@
 <mapper namespace="com.example.overview.Dao.IllegelUserDao">
     <!--查询所有违法用户-->
     <select id="selectAllUser" resultType="com.example.overview.entity.IllegelUser">
-         SELECT USER_ID AS userId,USER_NAME AS userName,DEPT_CODE AS deptCode
-         FROM T_INFO_ILLEGEL_USER
+        SELECT
+          USER_ID AS userId,
+          USER_NAME AS userName,
+          DEPT_CODE AS deptCode
+        FROM T_INFO_ILLEGEL_USER
     </select>
 </mapper>

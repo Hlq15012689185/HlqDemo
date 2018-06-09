@@ -3,9 +3,9 @@ package com.example.overview.serviceImpl;
 import com.example.overview.Dao.IllegelUserDao;
 
 import com.example.overview.entity.IllegelUser;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -15,12 +15,12 @@ import java.util.List;
  * @Description:违法用户业务层
  */
 @Service
-public class IllegelUserServiceImpl  {
+public class IllegelUserServiceImpl {
 
-    @Autowired
+    @Resource
     private IllegelUserDao dao;
 
-    public List<IllegelUser> selectAllUser() throws Exception {
+    public List<IllegelUser> selectAllUser() {
         return dao.selectAllUser();
     }
 }

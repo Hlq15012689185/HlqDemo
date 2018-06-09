@@ -13,5 +13,5 @@ import java.util.List;
  */
 
 public interface IllegelUserDao {
-    public List<IllegelUser> selectAllUser()throws Exception;
+    List<IllegelUser> selectAllUser();
 }

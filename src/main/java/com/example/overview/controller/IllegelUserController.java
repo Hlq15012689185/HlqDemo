@@ -2,11 +2,11 @@ package com.example.overview.controller;
 
 import com.example.overview.entity.IllegelUser;
 import com.example.overview.serviceImpl.IllegelUserServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -15,22 +15,16 @@ import java.util.List;
  * @Author:黄立群
  * @Description:违法用户控制层
  */
-@Controller
-@RequestMapping(value = "/illegelUser")
+@RestController
+@RequestMapping("/illegelUser")
 public class IllegelUserController {
 
-    @Autowired
+    @Resource
     private IllegelUserServiceImpl illegelUserService;
-    @RequestMapping(value="/getAllIllegelUser")
-    public void getAllIllegelUser(HttpServletRequest request){
 
-        try {
-            List<IllegelUser> list = illegelUserService.selectAllUser();
-            for(IllegelUser user:list){
-                System.out.println(user.getUserName());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    @GetMapping("/getAllIllegelUser")
+    public void getAllIllegelUser() {
+        List<IllegelUser> illegelUsers = illegelUserService.selectAllUser();
+        illegelUsers.forEach(System.out::println);
     }
 }

@@ -1,5 +1,9 @@
 package com.example.overview.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 /**
@@ -8,36 +12,13 @@ import java.io.Serializable;
  * @Author:黄立群
  * @Description:违法用户实体类
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class IllegelUser implements Serializable {
 
+    private static final long serialVersionUID = 2695592208622623729L;
     private String userId;
-
     private String userName;
-
     private String deptCode;
-
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getDeptCode() {
-        return deptCode;
-    }
-
-    public void setDeptCode(String deptCode) {
-        this.deptCode = deptCode;
-    }
 }
